@@ -1,0 +1,22 @@
+<table>
+    <a href="<?= $block->getUrl('test/index/insert') ?>">new student</a>
+    <tr>
+        <th>Id</th>
+        <th>Ten</th>
+        <th>Dia chi</th>
+        <th>Trang thai</th>
+    </tr>
+    <?php
+    $list = $block->getCollection();
+    foreach ($list as $item) {
+    ?>
+        <tr>
+            <td><?= $item->getData('student_id') ?></td>
+            <td><?= $item->getData('name') ?></td>
+            <td><?= $item->getData('address') ?></td>
+            <td><?= $item->getData('status') ? "Kich hoat" : "vo hieu hoa" ?></td>
+            <td><a href="<?php echo $block->getUrl('test/index/edit') . "id/" . $item->getData('student_id'); ?>">edit<a /></td>
+            <td><a href="<?php echo $block->getUrl('test/index/delete/id/') . "id/" . $item->getData('student_id'); ?>">delete</a></td>
+        </tr>
+    <?php } ?>
+</table>

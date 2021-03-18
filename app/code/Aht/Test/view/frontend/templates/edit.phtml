@@ -1,0 +1,27 @@
+<style>
+</style>
+<?php
+$student = $block->getStudent();
+?>
+<div>
+    <form action="<?= ($block->getUrl('test/index/update') . 'id/' . $student->getStudentId()) ?>" method="POST">
+        <div>
+            <label for="">Ten</label>
+            <input type="text" name='name' value="<?= $student->getName() ?>">
+        </div>
+        <div>
+            <label for="">Dia chi</label>
+            <input type="text" name='address' value="<?= $student->getAddress() ?>">
+        </div>
+        <div>
+            <label for="">trang thai</label>
+            <select name="status" id="">
+                <option value="1" <?= $student->getStatus() == 1 ? 'selected' : "" ?>>kich hoat</option>
+                <option value="0" <?= $student->getStatus() == 0 ? 'selected' : "" ?>>vo hieu hoa</option>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value='gui'>
+        </div>
+    </form>
+</div>

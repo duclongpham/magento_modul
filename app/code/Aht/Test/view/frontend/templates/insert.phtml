@@ -1,0 +1,25 @@
+<style>
+</style>
+
+<div>
+    <form action="<?= $block->getUrl('test/index/insert') ?>" method="POST">
+        <div>
+            <label for="">Ten</label>
+            <input type="text" name='name'>
+        </div>
+        <div>
+            <label for="">Dia chi</label>
+            <input type="text" name='address'>
+        </div>
+        <div>
+            <label for="">trang thai</label>
+            <select name="status" id="">
+                <option value="1">kich hoat</option>
+                <option value="0">vo hieu hoa</option>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value='gui'>
+        </div>
+    </form>
+</div>
