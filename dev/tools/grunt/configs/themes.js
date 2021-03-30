@@ -50,5 +50,28 @@ module.exports = {
             'css/styles'
         ],
         dsl: 'less'
+    },
+    simple: {
+        area: 'frontend',
+        name: 'AHT/simple',
+        locale: 'en_US',
+        files: [
+            'css/styles-m',
+            'css/styles-l',
+            'css/source/custom',
+            'css/source/slick'
+        ],
+        dsl: 'less'
+    },
+
+    learn: {
+        area: 'frontend',
+        name: 'AHT/learn',
+        locale: 'en_US',
+        files: [
+            'css/styles-m',
+            'css/styles-l'
+        ],
+        dsl: 'less'
     }
 };

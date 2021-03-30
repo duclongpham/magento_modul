@@ -1,0 +1,17 @@
+<style>
+    .bl_ock2 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        display: inline-block;
+        margin: 10px;
+    }
+</style>
+
+<div class='bl_ock2'>
+    <?php echo $cssClass = $this->hasCssClass() ? ' ' . $this->getCssClass() : '' ?>
+</div>
+
+<script>
+    require(["Mageplaza_HelloWorld/js/test1"], function(get) {});
+</script>

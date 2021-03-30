@@ -1,0 +1,54 @@
+<span>Category:
+</span>
+
+<div id="modal">
+    <div class="modal-body-content">
+        <div class="customer-welcome">
+            <button data-mage-init='{"dropdown":{}}' data-toggle="dropdown" class="action" data-action="customer-menu-toggle">
+                <span><?= $block->escapeHtml(__('Add To Card')) ?></span>
+            </button>
+            <ul data-target="dropdown" class="dropdown-options">
+                <li class='yes'>
+                    <span class="item"><?= $block->escapeHtml(__('Yes')) ?></span>
+                </li>
+                <li class='no'>
+                    <span class="item"><?= $block->escapeHtml(__('No')) ?></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    require([
+        "jquery",
+        "Magento_Ui/js/modal/modal"
+    ], function($, modal) {
+        var options = {
+            type: 'popup',
+            responsive: true,
+            title: 'Main title',
+            buttons: [{
+                text: $.mage.__('Ok'),
+                class: '',
+                click: function() {
+                    this.closeModal();
+                }
+            }]
+        };
+
+        var popup = modal(options, $('#modal'));
+        $(".tocart").click(function(e) {
+            e.preventDefault()
+            $('#modal').modal('openModal');
+        });
+
+        $('.yes').on('click', function() {
+            $(".tocart").submit();
+            $('#modal').modal('closeModal');
+        })
+        $('.no').on('click', function() {
+            $('#modal').modal('closeModal');
+            console.log('show')
+        })
+    });
+</script>
